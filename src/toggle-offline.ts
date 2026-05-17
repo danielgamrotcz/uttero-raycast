@@ -7,10 +7,10 @@ export default async function main() {
     return;
   }
   try {
-    sendUtteroCommand("dictate");
+    sendUtteroCommand("toggle-offline");
     await closeMainWindow();
-    await showHUD("Dictation started");
+    await showHUD("Offline mode toggled");
   } catch {
-    await showToast({ style: Toast.Style.Failure, title: "Failed to start dictation", message: "Check Uttero is running." });
+    await showToast({ style: Toast.Style.Failure, title: "Failed to toggle offline mode", message: "Check Uttero is running." });
   }
 }

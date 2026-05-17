@@ -14,16 +14,46 @@
       "mode": "no-view"
     },
     {
-      "name": "select-style",
-      "title": "Select Style",
-      "description": "Choose which Uttero style to use for the next dictation.",
+      "name": "dictate-with-mode",
+      "title": "Dictate with Mode",
+      "description": "Pick a style and start dictating immediately.",
       "mode": "view"
+    },
+    {
+      "name": "transcript-history",
+      "title": "Transcript History",
+      "description": "Browse and copy recent Uttero transcripts.",
+      "mode": "view"
+    },
+    {
+      "name": "copy-last-transcript",
+      "title": "Copy Last Transcript",
+      "description": "Copy the most recent Uttero transcript to the clipboard.",
+      "mode": "no-view"
     },
     {
       "name": "insert-last-transcript",
       "title": "Insert Last Transcript",
       "description": "Insert the most recent dictation transcript at the cursor.",
       "mode": "no-view"
+    },
+    {
+      "name": "select-style",
+      "title": "Search Styles",
+      "description": "Choose which Uttero style to use for the next dictation.",
+      "mode": "view"
+    },
+    {
+      "name": "toggle-offline",
+      "title": "Toggle Offline Mode",
+      "description": "Switch Uttero between online (cloud) and offline (on-device) transcription.",
+      "mode": "no-view"
+    },
+    {
+      "name": "menu-bar-status",
+      "title": "Uttero Status",
+      "description": "Show today's dictation stats in the menu bar.",
+      "mode": "menu-bar"
     },
     {
       "name": "open-settings",

@@ -1,4 +1,4 @@
-import { Action, ActionPanel, Color, Icon, List, showHUD, showToast, Toast } from "@raycast/api";
+import { Action, ActionPanel, closeMainWindow, Color, Icon, List, showToast, Toast } from "@raycast/api";
 import { execSync } from "child_process";
 import { sendUtteroCommand, isUtteroRunning } from "./utils/command";
 
@@ -35,19 +35,19 @@ function loadPresets(): { presets: Preset[]; selectedId: string } {
   }
 }
 
-export default function SelectStyle() {
+export default function DictateWithMode() {
   const { presets, selectedId } = loadPresets();
 
-  async function activate(preset: Preset) {
+  async function dictate(preset: Preset) {
     if (!isUtteroRunning()) {
       await showToast({ style: Toast.Style.Failure, title: "Uttero is not running", message: "Start Uttero first." });
       return;
     }
     try {
-      sendUtteroCommand("select-style", { styleId: preset.id });
-      await showHUD(`Style: ${preset.shortName ?? preset.name}`);
+      sendUtteroCommand("dictate", { styleId: preset.id });
+      await closeMainWindow();
     } catch {
-      await showToast({ style: Toast.Style.Failure, title: "Failed to select style", message: "Check Uttero is running." });
+      await showToast({ style: Toast.Style.Failure, title: "Failed to start dictation", message: "Check Uttero is running." });
     }
   }
 
@@ -64,7 +64,7 @@ export default function SelectStyle() {
   }
 
   return (
-    <List>
+    <List searchBarPlaceholder="Pick a style and start dictating…">
       {presets.map((preset) => {
         const isActive = preset.id === selectedId;
         return (
@@ -79,7 +79,7 @@ export default function SelectStyle() {
             }
             actions={
               <ActionPanel>
-                <Action title="Select Style" icon={Icon.SpeechBubble} onAction={() => activate(preset)} />
+                <Action title="Dictate with This Style" icon={Icon.Microphone} onAction={() => dictate(preset)} />
               </ActionPanel>
             }
           />
