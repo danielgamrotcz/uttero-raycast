@@ -1,0 +1,48 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "uttero",
+  "title": "Uttero",
+  "description": "Control Uttero voice dictation from Raycast — start dictation, switch styles, and more.",
+  "icon": "extension-icon.png",
+  "author": "danielgamrotcz",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "start-dictation",
+      "title": "Start Dictation",
+      "description": "Start voice dictation with the currently selected style.",
+      "mode": "no-view"
+    },
+    {
+      "name": "select-style",
+      "title": "Select Style",
+      "description": "Choose which Uttero style to use for the next dictation.",
+      "mode": "view"
+    },
+    {
+      "name": "insert-last-transcript",
+      "title": "Insert Last Transcript",
+      "description": "Insert the most recent dictation transcript at the cursor.",
+      "mode": "no-view"
+    },
+    {
+      "name": "open-settings",
+      "title": "Open Uttero Settings",
+      "description": "Open the Uttero settings window.",
+      "mode": "no-view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.98.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "@types/react": "^19.1.5",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
