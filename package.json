@@ -4,8 +4,9 @@
   "title": "Uttero",
   "description": "Control Uttero voice dictation from Raycast — start dictation, switch styles, and more.",
   "icon": "extension-icon.png",
-  "author": "danielgamrotcz",
+  "author": "daniel_gamrot",
   "license": "MIT",
+  "categories": ["Productivity", "Applications"],
   "commands": [
     {
       "name": "start-dictation",
